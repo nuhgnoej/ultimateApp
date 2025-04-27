@@ -8,6 +8,7 @@ import {
   StyleSheet,
   Text,
   TextInput,
+  TouchableOpacity,
   View,
 } from "react-native";
 
@@ -19,6 +20,12 @@ export default function App() {
     if (!inputText.trim()) return;
     setItems((prevItems) => [...prevItems, inputText]);
     setInputText("");
+  };
+
+  const handleDeleteItem = (indexToDelete: number) => {
+    setItems((prevItems) =>
+      prevItems.filter((_, idx) => idx !== indexToDelete)
+    );
   };
 
   return (
@@ -39,9 +46,19 @@ export default function App() {
         data={items}
         keyExtractor={(item, index) => index.toString()}
         renderItem={({ item, index }) => (
-          <View style={styles.listItem}>
-            <Text style={styles.listText}>
-              {index + 1}. {item}
+          <TouchableOpacity onLongPress={() => handleDeleteItem(index)}>
+            <View style={styles.listItem}>
+              <Text style={styles.listText}>
+                {index + 1}. {item}
+              </Text>
+            </View>
+          </TouchableOpacity>
+        )}
+        ItemSeparatorComponent={() => <View style={styles.separator} />}
+        ListEmptyComponent={() => (
+          <View style={{ padding: 20 }}>
+            <Text style={{ textAlign: "center", color: "#aaa" }}>
+              No items yet. Add something!
             </Text>
           </View>
         )}
@@ -89,4 +106,9 @@ const styles = StyleSheet.create({
     marginVertical: 5,
   },
   listText: { fontSize: 18 },
+  separator: {
+    height: 1,
+    backgroundColor: "#ccc",
+    marginVertical: 5,
+  },
 });
