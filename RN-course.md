@@ -9,18 +9,19 @@
     - View, Text, Button, TextInput 기본 컴포넌트 다뤄보기
     - Flexbox로 레이아웃 잡기
     - 버튼 누르면 입력값 보여주기 (Alert)
+    - Event Handling (onPress, onChangeText)
+    - FlatList
+    - scrollView
 - [x] Web 대응(Alert 분기처리)
 - [x] 컴포넌트 스타일링 (StyleSheet, Flexbox Layout)
     - flexbox로 자연스러운 레이아웃 만들기
-    - FlatList
-    - scrollView
+        - 하위요소 세로로, 가로로 배치하기      
 
 
 - Create React Native App (CRNA)
 
-- 
 - SafeAreaView, StatusBar 다룰기
-- Event Handling (onPress, onChangeText)
+
 - Stack Navigation, Bottom Tabs Navigation 진행
 - 타입스크립트 도입 (Typescript 기본)
 - Styled Components로 스타일링
