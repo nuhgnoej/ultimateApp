@@ -16,27 +16,25 @@
 - [x] 컴포넌트 스타일링 (StyleSheet, Flexbox Layout)
   - flexbox로 자연스러운 레이아웃 만들기
     - 하위요소 세로로, 가로로 배치하기
-- [ ] Stack Navigation, Bottom Tabs Navigation 진행
+
+## 🛠 2단계: 상태 관리와 아키텍쳐
+
+- [ ] Stack Navigation, Bottom Tabs Navigation
   - Stack Navigation 설치
   - 화면 이동 구현 (navigate)
   - navigation 객체, route 객체
   - Navigation Parameters
-  - 컴포넌트 간 props으로 데이터 넘기기
-  - JS - 널병합연산자, 옵셔널 체이닝
+  - 컴포넌트 간 props으로 데이터 넘기기  
   - Stack Navigation 헤더 커스텀하기
   - bottom 탭 만들기
-
+  - 특정 화면에서 Stack, Tab 안보이게 하기
+- [ ] Context API
 - Create React Native App (CRNA)
 - SafeAreaView, StatusBar 다루기
-- 타입스크립트 도입 (Typescript 기본)
 - Styled Components로 스타일링
 - Platform 변환 대응 (Android, iOS)
 - Dimensions API, useWindowDimensions 사용
-
-## 🛠 2단계: 상태 관리와 아키텍쳐
-
 - React Hooks (특히 useState, useEffect)
-- Context API 가장 기준적으로 전역 관리
 - useReducer로 복지적 상태 처리
 - Custom Hooks 작성
 - React Query로 서버 데이터 관리 (Fetching, Caching, Error)
