@@ -4,6 +4,7 @@
 
 - [x] Expo 기본 사용법
   - [x] 프로젝트 셋업 - npx create-expo-app UltimateApp --template
+  - [ ] tunnel로 시작하기 - npx expo start --tunnel
 - [x] SSH 원격 저장소 연결
 - [x] 핵심 컴포넌트 & 입력처리 실습(View, Text, Image, ScrollView, FlatList)
   - View, Text, Button, TextInput 기본 컴포넌트 다뤄보기
