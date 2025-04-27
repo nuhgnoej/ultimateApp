@@ -1,114 +1,25 @@
-import { StatusBar } from "expo-status-bar";
-import { useState } from "react";
-import {
-  Alert,
-  Button,
-  FlatList,
-  Platform,
-  StyleSheet,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import WriteScreen from "./screens/WriteScreen";
+import Tabs from "./Tabs";
 
 export default function App() {
-  const [inputText, setInputText] = useState("");
-  const [items, setItems] = useState<string[]>([]);
-
-  const handleAddItem = () => {
-    if (!inputText.trim()) return;
-    setItems((prevItems) => [...prevItems, inputText]);
-    setInputText("");
-  };
-
-  const handleDeleteItem = (indexToDelete: number) => {
-    setItems((prevItems) =>
-      prevItems.filter((_, idx) => idx !== indexToDelete)
-    );
-  };
+  const Stack = createNativeStackNavigator();
 
   return (
-    <View style={styles.container}>
-      <StatusBar style="auto" />
-      <Text style={styles.title}>Ultimate App 🚀</Text>
-      <View style={styles.inputContainer}>
-        <TextInput
-          style={styles.input}
-          placeholder="Type Something..."
-          value={inputText}
-          onChangeText={setInputText}
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name="Tabs"
+          component={Tabs}
+          options={{ headerShown: false }}
         />
-        <Button title="Add" onPress={handleAddItem} />
-      </View>
-      <FlatList
-        style={styles.list}
-        data={items}
-        keyExtractor={(item, index) => index.toString()}
-        renderItem={({ item, index }) => (
-          <TouchableOpacity onLongPress={() => handleDeleteItem(index)}>
-            <View style={styles.listItem}>
-              <Text style={styles.listText}>
-                {index + 1}. {item}
-              </Text>
-            </View>
-          </TouchableOpacity>
-        )}
-        ItemSeparatorComponent={() => <View style={styles.separator} />}
-        ListEmptyComponent={() => (
-          <View style={{ padding: 20 }}>
-            <Text style={{ textAlign: "center", color: "#aaa" }}>
-              No items yet. Add something!
-            </Text>
-          </View>
-        )}
-      ></FlatList>
-    </View>
+        <Stack.Screen
+          name="Write"
+          component={WriteScreen}
+          options={{ headerShown: false }}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    justifyContent: "center",
-    alignItems: "center",
-    padding: 20,
-  },
-  title: {
-    fontSize: 28,
-    fontWeight: "600",
-    marginBottom: 20,
-  },
-  input: {
-    width: "100%",
-    borderWidth: 1,
-    borderColor: "#ccc",
-    borderRadius: 10,
-    padding: 12,
-    marginBottom: 20,
-  },
-  inputContainer: {
-    flexDirection: "row",
-    marginBottom: 20,
-    alignItems: "center",
-    justifyContent: "space-between",
-  },
-  list: {
-    marginTop: 10,
-  },
-  listItem: {
-    padding: 15,
-    backgroundColor: "#f1f1f1",
-    borderBottomWidth: 1,
-    borderBottomColor: "#ddd",
-    borderRadius: 8,
-    marginVertical: 5,
-  },
-  listText: { fontSize: 18 },
-  separator: {
-    height: 1,
-    backgroundColor: "#ccc",
-    marginVertical: 5,
-  },
-});
