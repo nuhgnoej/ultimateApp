@@ -2,11 +2,23 @@
 
 ## 📚 1단계: 기초 다지기 (Expo + React Native 기본)
 
-- [x] 프로젝트 셋업 - npx create-expo-app UltimateApp --template
-- Expo 기본 사용법
+- [x] Expo 기본 사용법
+    - [x] 프로젝트 셋업 - npx create-expo-app UltimateApp --template
+- [x] SSH 원격 저장소 연결
+- [x] 핵심 컴포넌트 & 입력처리 실습(View, Text, Image, ScrollView, FlatList)
+    - View, Text, Button, TextInput 기본 컴포넌트 다뤄보기
+    - Flexbox로 레이아웃 잡기
+    - 버튼 누르면 입력값 보여주기 (Alert)
+- [x] Web 대응(Alert 분기처리)
+- [x] 컴포넌트 스타일링 (StyleSheet, Flexbox Layout)
+    - flexbox로 자연스러운 레이아웃 만들기
+    - FlatList
+    - scrollView
+
+
 - Create React Native App (CRNA)
-- 해당 컨포넌트 (View, Text, Image, ScrollView, FlatList)
-- 컨포넌트 스타일링 (StyleSheet, Flexbox Layout)
+
+- 
 - SafeAreaView, StatusBar 다룰기
 - Event Handling (onPress, onChangeText)
 - Stack Navigation, Bottom Tabs Navigation 진행
