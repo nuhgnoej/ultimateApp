@@ -30,6 +30,9 @@
   - bottom 탭 만들기
   - 특정 화면에서 Stack, Tab 안보이게 하기
 - [ ] Context API
+  - Context
+  - Custom Hook - useCounter 
+  - 
 - Create React Native App (CRNA)
 - SafeAreaView, StatusBar 다루기
 - Styled Components로 스타일링
