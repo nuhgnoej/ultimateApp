@@ -40,7 +40,7 @@ export default function Tabs() {
           ),
         }}
       />
-      <Tab.Screen
+      {/* <Tab.Screen
         name="Detail"
         component={DetailScreen}
         options={{
@@ -48,7 +48,7 @@ export default function Tabs() {
             <Ionicons name="document-text" color={color} size={size} />
           ),
         }}
-      />
+      /> */}
     </Tab.Navigator>
   );
 }

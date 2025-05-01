@@ -15,7 +15,7 @@ export default function WriteScreen() {
       return;
     }
     addDiary(title, body);
-    navigation.navigate("Home" as never); // 타입스크립트 오류 없애려고 as never
+    navigation.navigate("Tabs", { screen: "Home" });
   };
 
   return (
